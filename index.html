@@ -69,12 +69,16 @@ def query_user(uid):
         return f"查询失败：{str(e)[:50]}"
 
 @app.route("/webhook", methods=["POST"])
+@app.route("/webhook", methods=["POST"])
 def webhook():
-    print("Webhook received!")
     data = request.get_json()
-    print(f"Data: {str(data)[:100]}")
-    if not data or "message" not in data:
-        return "ok"
+    print(f"RAW DATA: {data}")
+    try:
+        chat_id = data["message"]["chat"]["id"]
+        send_message(chat_id, "小葵收到了！🌻")
+    except Exception as e:
+        print(f"Error: {e}")
+    return "ok"
     chat_id = data["message"]["chat"]["id"]
     text = data["message"].get("text", "")
     if text == "/start":
