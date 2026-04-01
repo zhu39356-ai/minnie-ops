@@ -50,8 +50,12 @@ def ask_gemini(question):
             timeout=30
         )
         data = res.json()
+        if "error" in data:
+            print(f"Gemini error: {data['error']}")
+            return f"小葵暂时无法回答：{data['error'].get('message','未知错误')}"
         return data["candidates"][0]["content"]["parts"][0]["text"]
     except Exception as e:
+        print(f"Exception: {e}")
         return "小葵暂时无法回答，请稍后再试 😊"
 
 def format_date(date_str):
