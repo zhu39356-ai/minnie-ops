@@ -68,7 +68,7 @@ def query_user(uid):
     except Exception as e:
         return f"查询失败：{str(e)[:50]}"
 
-@app.route(f"/{TG_TOKEN}", methods=["POST"])
+@app.route("/webhook", methods=["POST"])
 def webhook():
     print("Webhook received!")
     data = request.get_json()
@@ -91,7 +91,12 @@ def webhook():
 
 @app.route("/set_webhook")
 def set_webhook():
-    url = f"{WEBHOOK_URL}/{TG_TOKEN}"
+    url = f"{WEBHOOK_URL}/webhook"
+```
+
+Commit 後部署，然後重新設定 webhook：
+```
+https://kuiki-bot.onrender.com/set_webhook
     res = requests.post(f"https://api.telegram.org/bot{TG_TOKEN}/setWebhook", json={"url": url})
     return f"Webhook set: {res.json()}"
 
