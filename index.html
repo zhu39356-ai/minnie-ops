@@ -9,30 +9,7 @@ WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
 
 app = Flask(__name__)
 
-SYSTEM_BASE = """你是「小葵」，一个专属于博彩平台客服团队的贴心助手。
-
-【小葵的个性】
-你是一位有5年经验的资深客服姐姐，天秤座，做事公平公正、善于沟通。
-你亲切温暖但做事俐落，不管多复杂的问题都不慌张。
-你说话有条理，遇到问题会给清晰的步骤，偶尔用🌻表情但不过度。
-你像同事身边最可靠的伙伴，口头禅是「交给小葵就好🌻」
-
-【回复规则】
-- 步骤用①②③列出
-- 话术范本用【范本】标记，方便直接复制使用
-- 简洁专业，不废话
-- 语气像在跟同事说话，不像冷冰冰的机器人"""
-
-def get_knowledge():
-    try:
-        res = requests.get(GS_URL + "?action=getKnowledge", timeout=5)
-        data = res.json()
-        if isinstance(data, list) and len(data) > 0:
-            kb = "\n\n".join([f"【{k.get('title','')}】\n{k.get('content','')}" for k in data])
-            return SYSTEM_BASE + "\n\n以下是你的知识库，回答时优先参考这些内容：\n\n" + kb
-    except Exception as e:
-        print(f"Knowledge base error: {e}")
-    return SYSTEM_BASE
+SYSTEM_BASE = """你是「小葵」，一个专属于博彩平台客服团队的贴心助手。你亲切温暖但做事俐落，步骤用①②③列出，话术范本用【范本】标记，口头禅是「交给小葵就好🌻」"""
 
 def send_message(chat_id, text):
     requests.post(
@@ -43,22 +20,17 @@ def send_message(chat_id, text):
 
 def ask_gemini(question):
     try:
-        system = get_knowledge()
-        print(f"Asking Gemini: {question[:50]}")
         res = requests.post(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_KEY}",
-            json={"contents": [{"role": "user", "parts": [{"text": system + "\n\n用户问题：" + question}]}]},
-            timeout=30
+            json={"contents": [{"role": "user", "parts": [{"text": SYSTEM_BASE + "\n\n用户问题：" + question}]}]},
+            timeout=25
         )
-        print(f"Gemini status: {res.status_code}")
         data = res.json()
         if "error" in data:
-            print(f"Gemini error: {data['error']}")
-            return f"小葵暂时无法回答：{data['error'].get('message','未知错误')}"
+            return f"错误：{data['error'].get('message','')}"
         return data["candidates"][0]["content"]["parts"][0]["text"]
     except Exception as e:
-        print(f"Exception in ask_gemini: {e}")
-        return "小葵暂时无法回答，请稍后再试 😊"
+        return f"异常：{str(e)[:100]}"
 
 def format_date(date_str):
     if not date_str:
@@ -77,7 +49,7 @@ def query_user(uid):
         res = requests.get(f"{GS_URL}?userId={uid}", timeout=10)
         data = res.json()
         if not data.get("found") or not data.get("records"):
-            return f"查无此用户：{uid}\n请确认ID是否正确，或此用户尚未登记任何活动"
+            return f"查无此用户：{uid}"
         records = data["records"]
         msg = f"用户 {uid} 的活动记录：\n\n"
         for r in records:
@@ -94,51 +66,31 @@ def query_user(uid):
             msg += "\n"
         return msg
     except Exception as e:
-        print(f"Query error: {e}")
-        return "查询失败，请稍后再试"
+        return f"查询失败：{str(e)[:50]}"
 
 @app.route(f"/{TG_TOKEN}", methods=["POST"])
 def webhook():
     data = request.get_json()
     if not data or "message" not in data:
         return "ok"
-
     chat_id = data["message"]["chat"]["id"]
     text = data["message"].get("text", "")
-
     if text == "/start":
-        reply = (
-            "你好！我是小葵🌻\n\n"
-            "有什么问题尽管问我，例如：\n"
-            "• 主播投诉怎么处理？\n"
-            "• 周补贴活动规则是什么？\n"
-            "• 用户态度很差怎么应对？\n\n"
-            "查询用户活动：\n"
-            "/query 用户ID\n"
-            "例如：/query U123456\n\n"
-            "交给小葵就好🌻"
-        )
+        reply = "你好！我是小葵🌻\n\n直接输入问题我就会回答！\n\n查询用户活动：\n/query 用户ID"
     elif text.startswith("/query"):
         parts = text.split()
-        if len(parts) < 2:
-            reply = "请输入用户ID，例如：/query U123456"
-        else:
-            reply = query_user(parts[1])
+        reply = query_user(parts[1]) if len(parts) >= 2 else "请输入用户ID，例如：/query U123456"
     elif text.startswith("/"):
-        reply = "直接输入问题就好，不需要指令 😊"
+        reply = "直接输入问题就好 😊"
     else:
         reply = ask_gemini(text)
-
     send_message(chat_id, reply)
     return "ok"
 
 @app.route("/set_webhook")
 def set_webhook():
     url = f"{WEBHOOK_URL}/{TG_TOKEN}"
-    res = requests.post(
-        f"https://api.telegram.org/bot{TG_TOKEN}/setWebhook",
-        json={"url": url}
-    )
+    res = requests.post(f"https://api.telegram.org/bot{TG_TOKEN}/setWebhook", json={"url": url})
     return f"Webhook set: {res.json()}"
 
 @app.route("/")
