@@ -25,13 +25,13 @@ SYSTEM_BASE = """你是「小葵」，一个专属于博彩平台客服团队的
 
 def get_knowledge():
     try:
-        res = requests.get(GS_URL + "?action=getKnowledge", timeout=10)
+        res = requests.get(GS_URL + "?action=getKnowledge", timeout=5)
         data = res.json()
         if isinstance(data, list) and len(data) > 0:
             kb = "\n\n".join([f"【{k.get('title','')}】\n{k.get('content','')}" for k in data])
             return SYSTEM_BASE + "\n\n以下是你的知识库，回答时优先参考这些内容：\n\n" + kb
-    except:
-        pass
+    except Exception as e:
+        print(f"Knowledge base error: {e}")
     return SYSTEM_BASE
 
 def send_message(chat_id, text):
@@ -44,33 +44,26 @@ def send_message(chat_id, text):
 def ask_gemini(question):
     try:
         system = get_knowledge()
+        print(f"Asking Gemini: {question[:50]}")
         res = requests.post(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_KEY}",
             json={"contents": [{"role": "user", "parts": [{"text": system + "\n\n用户问题：" + question}]}]},
             timeout=30
         )
+        print(f"Gemini status: {res.status_code}")
         data = res.json()
         if "error" in data:
             print(f"Gemini error: {data['error']}")
             return f"小葵暂时无法回答：{data['error'].get('message','未知错误')}"
         return data["candidates"][0]["content"]["parts"][0]["text"]
     except Exception as e:
-        print(f"Exception: {e}")
+        print(f"Exception in ask_gemini: {e}")
         return "小葵暂时无法回答，请稍后再试 😊"
 
 def format_date(date_str):
     if not date_str:
         return ''
     try:
-        from datetime import datetime
-        # Handle various date formats
-        for fmt in ['%a %b %d %Y %H:%M:%S GMT+0800 (Taiwan Standard Time)', '%Y-%m-%d', '%m/%d/%Y']:
-            try:
-                d = datetime.strptime(str(date_str)[:24], fmt[:len(str(date_str)[:24])])
-                return d.strftime('%Y/%m/%d')
-            except:
-                continue
-        # Try to extract just the date part
         import re
         match = re.search(r'(\d{4})[/-](\d{1,2})[/-](\d{1,2})', str(date_str))
         if match:
@@ -88,17 +81,20 @@ def query_user(uid):
         records = data["records"]
         msg = f"用户 {uid} 的活动记录：\n\n"
         for r in records:
-            msg += f"活动：{r.get('activity','未知活动')}\n"
-            date = format_date(r.get('date',''))
+            msg += f"活动：{r.get('activity', r.get('活动','未知活动'))}\n"
+            date = format_date(r.get('date', r.get('日期','')))
             if date:
                 msg += f"登记日期：{date}\n"
-            if r.get('status'):
-                msg += f"状态：{r.get('status')}\n"
-            if r.get('amount'):
-                msg += f"申请金额：{r.get('amount')}\n"
+            status = r.get('status', r.get('状态',''))
+            if status:
+                msg += f"状态：{status}\n"
+            amount = r.get('amount', r.get('金额',''))
+            if amount:
+                msg += f"申请金额：{amount}\n"
             msg += "\n"
         return msg
-    except:
+    except Exception as e:
+        print(f"Query error: {e}")
         return "查询失败，请稍后再试"
 
 @app.route(f"/{TG_TOKEN}", methods=["POST"])
