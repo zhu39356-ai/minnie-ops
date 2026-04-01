@@ -70,7 +70,9 @@ def query_user(uid):
 
 @app.route(f"/{TG_TOKEN}", methods=["POST"])
 def webhook():
+    print("Webhook received!")
     data = request.get_json()
+    print(f"Data: {str(data)[:100]}")
     if not data or "message" not in data:
         return "ok"
     chat_id = data["message"]["chat"]["id"]
