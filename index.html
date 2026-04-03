@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0014)about:internet -->
+<html lang="zh-TW"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OPS Panel v5</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./OPS Panel v5_files/css2" rel="stylesheet">
 <style>
 :root {
   --bg: #09080d;
@@ -869,29 +869,29 @@ tr:hover td { background: rgba(240,180,41,0.02); }
     </div>
     <nav class="nav">
       <div class="nav-section-label">主要功能</div>
-      <div class="nav-item active" onclick="switchPage('dashboard')">
+      <div class="nav-item active" onclick="switchPage(&#39;dashboard&#39;)">
         <span class="nav-icon">🏠</span>首頁總覽
       </div>
-      <div class="nav-item" onclick="switchPage('user')">
+      <div class="nav-item" onclick="switchPage(&#39;user&#39;)">
         <span class="nav-icon">🔍</span>用戶活動查詢
       </div>
-      <div class="nav-item" onclick="switchPage('promo')">
+      <div class="nav-item" onclick="switchPage(&#39;promo&#39;)">
         <span class="nav-icon">🎁</span>平台活動管理
       </div>
-      <div class="nav-item" onclick="switchPage('complaint')">
+      <div class="nav-item" onclick="switchPage(&#39;complaint&#39;)">
         <span class="nav-icon">📋</span>投訴管理
         <span class="nav-badge" id="nav-pending-count" style="display:none;">0</span>
       </div>
       <div class="nav-section-label">工具</div>
-      <div class="nav-item" onclick="switchPage('kuiki')">
+      <div class="nav-item" onclick="switchPage(&#39;kuiki&#39;)">
         <span class="nav-icon">🌻</span>小葵助手
       </div>
-      <div class="nav-item" onclick="switchPage('tgbot')">
+      <div class="nav-item" onclick="switchPage(&#39;tgbot&#39;)">
         <span class="nav-icon">🤖</span>TG 機器人
       </div>
     </nav>
     <div class="sidebar-footer">
-      <div class="version" id="sidebar-time"></div>
+      <div class="version" id="sidebar-time">2026/04/03</div>
     </div>
   </div>
 
@@ -899,9 +899,9 @@ tr:hover td { background: rgba(240,180,41,0.02); }
   <div class="main">
     <div class="topbar">
       <div class="topbar-title" id="topbar-title">首頁總覽</div>
-      <div class="topbar-time" id="topbar-clock"></div>
+      <div class="topbar-time" id="topbar-clock">2026/04/03 下午12:52:45</div>
       <div class="status-dot"></div>
-      <span style="font-size:11px;color:var(--text-muted);font-family:'JetBrains Mono',monospace;">LIVE</span>
+      <span style="font-size:11px;color:var(--text-muted);font-family:&#39;JetBrains Mono&#39;,monospace;">LIVE</span>
     </div>
 
     <div class="content">
@@ -926,7 +926,7 @@ tr:hover td { background: rgba(240,180,41,0.02); }
           </div>
           <div class="stat-card stat-card-gold">
             <span class="stat-icon">🎁</span>
-            <div class="stat-value" id="dash-promos">0</div>
+            <div class="stat-value" id="dash-promos">17</div>
             <div class="stat-label">上架中活動</div>
           </div>
         </div>
@@ -938,9 +938,30 @@ tr:hover td { background: rgba(240,180,41,0.02); }
               <div class="section-head-title">📢 公告欄</div>
               <button class="btn btn-gold" style="font-size:11px;padding:7px 14px;" onclick="openAnnounceModal()">＋ 新增公告</button>
             </div>
-            <div class="announce-list" id="announce-list">
-              <div style="padding:30px;text-align:center;color:var(--text-muted);font-size:12px;">暫無公告</div>
-            </div>
+            <div class="announce-list" id="announce-list"><div class="announce-item">
+      <div class="announce-header">
+        <div class="announce-title">神秘禮金 喜從天降</div>
+        <span class="announce-importance imp-high">重要</span>
+      </div>
+      <div class="announce-content">【活動說明】
+神秘彩金無需申請！凡當日累計充值100元以上，次日均有概率獲得一份神秘彩金！
+
+活動對象：全體新老會員。活動時間：即日起（結束時間以官網通知為準）。
+【活動詳情】
+不定期派發神秘彩金給所有玩家，彩金沒有門檻限制，不設上限金額。只要您在平台有注冊過賬號，賬戶累計充值100元以上，都有可能收到隨機派發的神秘彩金！
+彩金發放純屬隨機，充值越多，發放概率越高。
+獲得神秘彩金後，將通過消息小秘書告知。
+
+【活動規則】
+1.所獲彩金1倍流水即可提款。
+2.如忘記會員賬號/密碼，請聯系7×24小時在線客服協助取回賬號信息。
+3.參與該優惠即表示已同意平台《優惠規則與條款》。</div>
+      <div class="announce-time">2026-04-02T10:50:00.000Z</div>
+      <div class="announce-actions">
+        <button class="btn-sm btn-sm-gold" onclick="openAnnounceModal(&#39;A001354&#39;)">編輯</button>
+        <button class="btn-sm btn-sm-danger" onclick="deleteAnnounce(&#39;A001354&#39;)">刪除</button>
+      </div>
+    </div></div>
           </div>
 
           <!-- Right column -->
@@ -951,19 +972,19 @@ tr:hover td { background: rgba(240,180,41,0.02); }
                 <div class="section-head-title">⚡ 快捷操作</div>
               </div>
               <div class="quick-grid">
-                <div class="quick-btn" onclick="switchPage('complaint'); setTimeout(()=>document.getElementById('new-complaint-modal').classList.add('open'),100)">
+                <div class="quick-btn" onclick="switchPage(&#39;complaint&#39;); setTimeout(()=&gt;document.getElementById(&#39;new-complaint-modal&#39;).classList.add(&#39;open&#39;),100)">
                   <div class="quick-btn-icon">📝</div>
                   <div class="quick-btn-label">新增投訴</div>
                 </div>
-                <div class="quick-btn" onclick="switchPage('promo')">
+                <div class="quick-btn" onclick="switchPage(&#39;promo&#39;)">
                   <div class="quick-btn-icon">🎁</div>
                   <div class="quick-btn-label">查看活動</div>
                 </div>
-                <div class="quick-btn" onclick="switchPage('user')">
+                <div class="quick-btn" onclick="switchPage(&#39;user&#39;)">
                   <div class="quick-btn-icon">🔍</div>
                   <div class="quick-btn-label">查詢用戶</div>
                 </div>
-                <div class="quick-btn" onclick="switchPage('kuiki')">
+                <div class="quick-btn" onclick="switchPage(&#39;kuiki&#39;)">
                   <div class="quick-btn-icon">🌻</div>
                   <div class="quick-btn-label">問小葵</div>
                 </div>
@@ -976,8 +997,16 @@ tr:hover td { background: rgba(240,180,41,0.02); }
                 <div class="section-head-title">🕐 最近動態</div>
               </div>
               <div class="recent-list" id="recent-list">
-                <div style="padding:24px;text-align:center;color:var(--text-muted);font-size:12px;">暫無記錄</div>
-              </div>
+    <div class="recent-item">
+      <span style="font-size:14px;">📋</span>
+      <div class="recent-title">新增投訴：2 · 其他</div>
+      <div class="recent-time">2026-04-03 12:01</div>
+    </div>
+    <div class="recent-item">
+      <span style="font-size:14px;">📋</span>
+      <div class="recent-title">新增投訴：7 · 虛假宣傳</div>
+      <div class="recent-time">2026-04-02 20:29</div>
+    </div></div>
             </div>
           </div>
         </div>
@@ -990,7 +1019,7 @@ tr:hover td { background: rgba(240,180,41,0.02); }
           <div class="search-bar">
             <div class="input-wrap" style="flex:1;">
               <span class="input-prefix">ID</span>
-              <input type="text" class="has-prefix" id="user-id-input" placeholder="輸入用戶 APP ID" onkeydown="if(event.key==='Enter')searchUser()">
+              <input type="text" class="has-prefix" id="user-id-input" placeholder="輸入用戶 APP ID" onkeydown="if(event.key===&#39;Enter&#39;)searchUser()">
             </div>
             <button class="btn btn-gold" onclick="searchUser()">查詢</button>
           </div>
@@ -1003,16 +1032,237 @@ tr:hover td { background: rgba(240,180,41,0.02); }
         <div class="page-toolbar">
           <input type="text" class="search-input-sm" placeholder="搜尋活動名稱..." oninput="renderPromos()" id="promo-search-input">
           <div class="filter-bar">
-            <button class="filter-tab active" onclick="setPromoFilter('all',this)">全部</button>
-            <button class="filter-tab" onclick="setPromoFilter('live',this)">直播</button>
-            <button class="filter-tab" onclick="setPromoFilter('chess',this)">棋牌</button>
-            <button class="filter-tab" onclick="setPromoFilter('on',this)">上架中</button>
-            <button class="filter-tab" onclick="setPromoFilter('off',this)">已下架</button>
+            <button class="filter-tab active" onclick="setPromoFilter(&#39;all&#39;,this)">全部</button>
+            <button class="filter-tab" onclick="setPromoFilter(&#39;live&#39;,this)">直播</button>
+            <button class="filter-tab" onclick="setPromoFilter(&#39;chess&#39;,this)">棋牌</button>
+            <button class="filter-tab" onclick="setPromoFilter(&#39;on&#39;,this)">上架中</button>
+            <button class="filter-tab" onclick="setPromoFilter(&#39;off&#39;,this)">已下架</button>
           </div>
           <button class="btn btn-ghost" style="margin-left:auto;" onclick="loadPromos()">🔄 重新載入</button>
         </div>
         <div style="font-size:11px;color:var(--text-muted);margin-bottom:14px;">活動資料從 Google Sheet 讀取，如需新增或修改請前往試算表編輯。</div>
-        <div class="promo-grid" id="promo-grid"></div>
+        <div class="promo-grid" id="promo-grid"><div class="promo-card" onclick="viewPromo(&#39;C001&#39;)">
+      <div class="promo-img-wrap"><img src="./OPS Panel v5_files/新人專屬滿週送.jpg" alt="">
+        <div class="promo-status-badge promo-on">● 上架</div>
+        <div class="promo-category-badge cat-chess">棋牌</div>
+      </div>
+      <div class="promo-card-body">
+        <div class="promo-card-name">新用戶滿周福利</div>
+        <div class="promo-meta-row">
+          <span class="promo-tag promo-tag-cycle">一次性</span>
+          <span class="promo-tag promo-tag-method">餘額</span>
+        </div>
+        <div class="promo-rules-preview">新會員注冊滿7日，7日內累計存款300元+，且有效投注達相應要求...</div>
+      </div>
+    </div><div class="promo-card" onclick="viewPromo(&#39;C002&#39;)">
+      <div class="promo-img-wrap"><img src="./OPS Panel v5_files/6喜會員日.jpg" alt="">
+        <div class="promo-status-badge promo-on">● 上架</div>
+        <div class="promo-category-badge cat-chess">棋牌</div>
+      </div>
+      <div class="promo-card-body">
+        <div class="promo-card-name">6喜會員日</div>
+        <div class="promo-meta-row">
+          <span class="promo-tag promo-tag-cycle">每月</span>
+          <span class="promo-tag promo-tag-method">餘額</span>
+        </div>
+        <div class="promo-rules-preview">充值金額100+，每月三期逢「6」派送...</div>
+      </div>
+    </div><div class="promo-card" onclick="viewPromo(&#39;C003&#39;)">
+      <div class="promo-img-wrap"><div class="promo-img-placeholder">🎁</div>
+        <div class="promo-status-badge promo-on">● 上架</div>
+        <div class="promo-category-badge cat-chess">棋牌</div>
+      </div>
+      <div class="promo-card-body">
+        <div class="promo-card-name">升級領工資</div>
+        <div class="promo-meta-row">
+          <span class="promo-tag promo-tag-cycle">不限</span>
+          <span class="promo-tag promo-tag-method">餘額</span>
+        </div>
+        <div class="promo-rules-preview">依VIP等級累計總存款達標即可領取晉級禮金及週/月俸祿...</div>
+      </div>
+    </div><div class="promo-card" onclick="viewPromo(&#39;C004&#39;)">
+      <div class="promo-img-wrap"><div class="promo-img-placeholder">🎁</div>
+        <div class="promo-status-badge promo-on">● 上架</div>
+        <div class="promo-category-badge cat-chess">棋牌</div>
+      </div>
+      <div class="promo-card-body">
+        <div class="promo-card-name">首充返利</div>
+        <div class="promo-meta-row">
+          <span class="promo-tag promo-tag-cycle">一次性</span>
+          <span class="promo-tag promo-tag-method">餘額</span>
+        </div>
+        <div class="promo-rules-preview">首次充值達到指定金額，限領1次...</div>
+      </div>
+    </div><div class="promo-card" onclick="viewPromo(&#39;C005&#39;)">
+      <div class="promo-img-wrap"><div class="promo-img-placeholder">🎁</div>
+        <div class="promo-status-badge promo-on">● 上架</div>
+        <div class="promo-category-badge cat-chess">棋牌</div>
+      </div>
+      <div class="promo-card-body">
+        <div class="promo-card-name">神秘禮金 喜從天降</div>
+        <div class="promo-meta-row">
+          <span class="promo-tag promo-tag-cycle">每日</span>
+          <span class="promo-tag promo-tag-method">餘額</span>
+        </div>
+        <div class="promo-rules-preview">無需申請，當日累計充值100元以上，次日自動有概率獲得...</div>
+      </div>
+    </div><div class="promo-card" onclick="viewPromo(&#39;C006&#39;)">
+      <div class="promo-img-wrap"><img src="./OPS Panel v5_files/二充包賠.jpg" alt="">
+        <div class="promo-status-badge promo-on">● 上架</div>
+        <div class="promo-category-badge cat-chess">棋牌</div>
+      </div>
+      <div class="promo-card-body">
+        <div class="promo-card-name">奉旨發財</div>
+        <div class="promo-meta-row">
+          <span class="promo-tag promo-tag-cycle">一次性</span>
+          <span class="promo-tag promo-tag-method">餘額</span>
+        </div>
+        <div class="promo-rules-preview">新會員第二筆存款後遊戲虧損，當日虧損當日申請，每人限1次...</div>
+      </div>
+    </div><div class="promo-card" onclick="viewPromo(&#39;C007&#39;)">
+      <div class="promo-img-wrap"><img src="./OPS Panel v5_files/老友回歸.jpg" alt="">
+        <div class="promo-status-badge promo-on">● 上架</div>
+        <div class="promo-category-badge cat-chess">棋牌</div>
+      </div>
+      <div class="promo-card-body">
+        <div class="promo-card-name">老友回歸</div>
+        <div class="promo-meta-row">
+          <span class="promo-tag promo-tag-cycle">一次性</span>
+          <span class="promo-tag promo-tag-method">餘額</span>
+        </div>
+        <div class="promo-rules-preview">最近15天無存款無賬變記錄，歷史總存款500元+，回歸並存款...</div>
+      </div>
+    </div><div class="promo-card" onclick="viewPromo(&#39;C008&#39;)">
+      <div class="promo-img-wrap"><div class="promo-img-placeholder">🎁</div>
+        <div class="promo-status-badge promo-on">● 上架</div>
+        <div class="promo-category-badge cat-chess">棋牌</div>
+      </div>
+      <div class="promo-card-body">
+        <div class="promo-card-name">每日簽到領紅包</div>
+        <div class="promo-meta-row">
+          <span class="promo-tag promo-tag-cycle">每日</span>
+          <span class="promo-tag promo-tag-method">餘額</span>
+        </div>
+        <div class="promo-rules-preview">每日簽到並達到當日充值要求，連續簽到不可中斷...</div>
+      </div>
+    </div><div class="promo-card" onclick="viewPromo(&#39;C009&#39;)">
+      <div class="promo-img-wrap"><div class="promo-img-placeholder">🎁</div>
+        <div class="promo-status-badge promo-on">● 上架</div>
+        <div class="promo-category-badge cat-chess">棋牌</div>
+      </div>
+      <div class="promo-card-body">
+        <div class="promo-card-name">天天返水</div>
+        <div class="promo-meta-row">
+          <span class="promo-tag promo-tag-cycle">每日</span>
+          <span class="promo-tag promo-tag-method">餘額</span>
+        </div>
+        <div class="promo-rules-preview">無需申請，最低投注1元起，系統自動返還...</div>
+      </div>
+    </div><div class="promo-card" onclick="viewPromo(&#39;C010&#39;)">
+      <div class="promo-img-wrap"><div class="promo-img-placeholder">🎁</div>
+        <div class="promo-status-badge promo-on">● 上架</div>
+        <div class="promo-category-badge cat-chess">棋牌</div>
+      </div>
+      <div class="promo-card-body">
+        <div class="promo-card-name">百億回饋現金紅包雨</div>
+        <div class="promo-meta-row">
+          <span class="promo-tag promo-tag-cycle">每日</span>
+          <span class="promo-tag promo-tag-method">餘額</span>
+        </div>
+        <div class="promo-rules-preview">當日在直播存款總金額達200元+，次日可參與搶紅包，無需申請...</div>
+      </div>
+    </div><div class="promo-card" onclick="viewPromo(&#39;C011&#39;)">
+      <div class="promo-img-wrap"><div class="promo-img-placeholder">🎁</div>
+        <div class="promo-status-badge promo-on">● 上架</div>
+        <div class="promo-category-badge cat-chess">棋牌</div>
+      </div>
+      <div class="promo-card-body">
+        <div class="promo-card-name">夜貓充值闖關福利</div>
+        <div class="promo-meta-row">
+          <span class="promo-tag promo-tag-cycle">每日</span>
+          <span class="promo-tag promo-tag-method">餘額</span>
+        </div>
+        <div class="promo-rules-preview">北京時間每日22:00至次日06:00期間充值，當日08:00-18:00聯繫客服申請...</div>
+      </div>
+    </div><div class="promo-card" onclick="viewPromo(&#39;C012&#39;)">
+      <div class="promo-img-wrap"><div class="promo-img-placeholder">🎁</div>
+        <div class="promo-status-badge promo-on">● 上架</div>
+        <div class="promo-category-badge cat-chess">棋牌</div>
+      </div>
+      <div class="promo-card-body">
+        <div class="promo-card-name">累計周補貼</div>
+        <div class="promo-meta-row">
+          <span class="promo-tag promo-tag-cycle">每週</span>
+          <span class="promo-tag promo-tag-method">餘額</span>
+        </div>
+        <div class="promo-rules-preview">上週遊戲虧損500元以上，聯繫三方專屬客服或7×24小時在線客服申請...</div>
+      </div>
+    </div><div class="promo-card" onclick="viewPromo(&#39;L001&#39;)">
+      <div class="promo-img-wrap"><div class="promo-img-placeholder">🎁</div>
+        <div class="promo-status-badge promo-on">● 上架</div>
+        <div class="promo-category-badge cat-live">直播</div>
+      </div>
+      <div class="promo-card-body">
+        <div class="promo-card-name">生日大禮</div>
+        <div class="promo-meta-row">
+          <span class="promo-tag promo-tag-cycle">一次性</span>
+          <span class="promo-tag promo-tag-method">鑽石</span>
+        </div>
+        <div class="promo-rules-preview">生日當天申請，金管家V1以上會員，近30日有效打碼30,000+，賬號余額需存放1,000元...</div>
+      </div>
+    </div><div class="promo-card" onclick="viewPromo(&#39;L002&#39;)">
+      <div class="promo-img-wrap"><div class="promo-img-placeholder">🎁</div>
+        <div class="promo-status-badge promo-on">● 上架</div>
+        <div class="promo-category-badge cat-live">直播</div>
+      </div>
+      <div class="promo-card-body">
+        <div class="promo-card-name">首充超值大禮包</div>
+        <div class="promo-meta-row">
+          <span class="promo-tag promo-tag-cycle">一次性</span>
+          <span class="promo-tag promo-tag-method">鑽石</span>
+        </div>
+        <div class="promo-rules-preview">首次兌換50元即可獲得，限領一次...</div>
+      </div>
+    </div><div class="promo-card" onclick="viewPromo(&#39;L003&#39;)">
+      <div class="promo-img-wrap"><div class="promo-img-placeholder">🎁</div>
+        <div class="promo-status-badge promo-on">● 上架</div>
+        <div class="promo-category-badge cat-live">直播</div>
+      </div>
+      <div class="promo-card-body">
+        <div class="promo-card-name">新人注冊活動</div>
+        <div class="promo-meta-row">
+          <span class="promo-tag promo-tag-cycle">一次性</span>
+          <span class="promo-tag promo-tag-method">鑽石</span>
+        </div>
+        <div class="promo-rules-preview">新人注冊7天內，單筆充值達標，充值後聯繫客服領取...</div>
+      </div>
+    </div><div class="promo-card" onclick="viewPromo(&#39;L004&#39;)">
+      <div class="promo-img-wrap"><div class="promo-img-placeholder">🎁</div>
+        <div class="promo-status-badge promo-on">● 上架</div>
+        <div class="promo-category-badge cat-live">直播</div>
+      </div>
+      <div class="promo-card-body">
+        <div class="promo-card-name">累計充值送好禮</div>
+        <div class="promo-meta-row">
+          <span class="promo-tag promo-tag-cycle">不限</span>
+          <span class="promo-tag promo-tag-method">鑽石</span>
+        </div>
+        <div class="promo-rules-preview">累計充值達到指定金額即可領取對應禮包，前往APP兌換...</div>
+      </div>
+    </div><div class="promo-card" onclick="viewPromo(&#39;L005&#39;)">
+      <div class="promo-img-wrap"><div class="promo-img-placeholder">🎁</div>
+        <div class="promo-status-badge promo-on">● 上架</div>
+        <div class="promo-category-badge cat-live">直播</div>
+      </div>
+      <div class="promo-card-body">
+        <div class="promo-card-name">排行榜獎勵</div>
+        <div class="promo-meta-row">
+          <span class="promo-tag promo-tag-cycle">每週</span>
+          <span class="promo-tag promo-tag-method">鑽石</span>
+        </div>
+        <div class="promo-rules-preview">自動統計，次日可領取昨日榜單獎勵，逾期清零...</div>
+      </div>
+    </div></div>
       </div>
 
       <!-- COMPLAINT PAGE -->
@@ -1020,16 +1270,16 @@ tr:hover td { background: rgba(240,180,41,0.02); }
         <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;align-items:center;">
           <div style="position:relative;">
             <span style="position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:12px;">🔍</span>
-            <input type="text" id="complaint-search" placeholder="搜尋用戶ID..." style="padding:9px 14px 9px 32px;background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:12px;outline:none;width:175px;" oninput="renderComplaints()" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
+            <input type="text" id="complaint-search" placeholder="搜尋用戶ID..." style="padding:9px 14px 9px 32px;background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:12px;outline:none;width:175px;" oninput="renderComplaints()" onfocus="this.style.borderColor=&#39;var(--gold)&#39;" onblur="this.style.borderColor=&#39;var(--border)&#39;">
           </div>
           <div class="filter-bar">
-            <button class="filter-tab active" onclick="setComplaintFilter('all',this)">全部</button>
-            <button class="filter-tab" onclick="setComplaintFilter('pending',this)">待處理</button>
-            <button class="filter-tab" onclick="setComplaintFilter('processing',this)">處理中</button>
-            <button class="filter-tab" onclick="setComplaintFilter('closed',this)">已結案</button>
-            <button class="filter-tab" onclick="setComplaintFilter('rejected',this)">已駁回</button>
+            <button class="filter-tab active" onclick="setComplaintFilter(&#39;all&#39;,this)">全部</button>
+            <button class="filter-tab" onclick="setComplaintFilter(&#39;pending&#39;,this)">待處理</button>
+            <button class="filter-tab" onclick="setComplaintFilter(&#39;processing&#39;,this)">處理中</button>
+            <button class="filter-tab" onclick="setComplaintFilter(&#39;closed&#39;,this)">已結案</button>
+            <button class="filter-tab" onclick="setComplaintFilter(&#39;rejected&#39;,this)">已駁回</button>
           </div>
-          <button class="btn btn-gold" style="margin-left:auto;" onclick="document.getElementById('new-complaint-modal').classList.add('open')">＋ 新增投訴</button>
+          <button class="btn btn-gold" style="margin-left:auto;" onclick="document.getElementById(&#39;new-complaint-modal&#39;).classList.add(&#39;open&#39;)">＋ 新增投訴</button>
         </div>
         <div class="table-wrap">
           <table>
@@ -1038,7 +1288,7 @@ tr:hover td { background: rgba(240,180,41,0.02); }
                 <th>案件編號</th><th>用戶ID</th><th>投訴類型</th><th>主播ID</th><th>金額</th><th>狀態</th><th>時間</th><th>操作</th>
               </tr>
             </thead>
-            <tbody id="complaint-tbody"></tbody>
+            <tbody id="complaint-tbody"><tr><td colspan="8" style="text-align:center;padding:48px;color:var(--text-muted);">暫無投訴記錄</td></tr></tbody>
           </table>
         </div>
       </div>
@@ -1065,7 +1315,7 @@ tr:hover td { background: rgba(240,180,41,0.02); }
               </div>
               <div style="display:flex;gap:10px;">
                 <button class="btn btn-gold" onclick="submitAdminLogin()" style="flex:1;">確認</button>
-                <button class="btn btn-ghost" onclick="document.getElementById('admin-panel').style.display='none'">取消</button>
+                <button class="btn btn-ghost" onclick="document.getElementById(&#39;admin-panel&#39;).style.display=&#39;none&#39;">取消</button>
               </div>
             </div>
           </div>
@@ -1097,16 +1347,16 @@ tr:hover td { background: rgba(240,180,41,0.02); }
           <!-- Suggestions -->
           <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px;">
             <span style="font-size:11px;color:var(--text-muted);align-self:center;">💡</span>
-            <button class="filter-tab" onclick="askSuggestion('用戶說主播騙錢，我應該怎麼處理？流程是什麼？')">主播投訴流程</button>
-            <button class="filter-tab" onclick="askSuggestion('用戶一直催促處理投訴，我應該怎麼回覆？')">催促投訴話術</button>
-            <button class="filter-tab" onclick="askSuggestion('用戶態度很差一直罵人，我應該怎麼應對？')">應對態度差用戶</button>
-            <button class="filter-tab" onclick="askSuggestion('帳號疑似被盜號，處理步驟是什麼？')">帳號異常處理</button>
+            <button class="filter-tab" onclick="askSuggestion(&#39;用戶說主播騙錢，我應該怎麼處理？流程是什麼？&#39;)">主播投訴流程</button>
+            <button class="filter-tab" onclick="askSuggestion(&#39;用戶一直催促處理投訴，我應該怎麼回覆？&#39;)">催促投訴話術</button>
+            <button class="filter-tab" onclick="askSuggestion(&#39;用戶態度很差一直罵人，我應該怎麼應對？&#39;)">應對態度差用戶</button>
+            <button class="filter-tab" onclick="askSuggestion(&#39;帳號疑似被盜號，處理步驟是什麼？&#39;)">帳號異常處理</button>
           </div>
 
           <div class="kuiki-msg" id="kuiki-messages"></div>
 
           <div style="display:flex;gap:10px;align-items:flex-end;">
-            <textarea id="kuiki-input" placeholder="輸入你的問題，小葵幫你解答... (Enter 發送，Shift+Enter 換行)" style="flex:1;min-height:50px;max-height:120px;resize:none;" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendToKuiki();}"></textarea>
+            <textarea id="kuiki-input" placeholder="輸入你的問題，小葵幫你解答... (Enter 發送，Shift+Enter 換行)" style="flex:1;min-height:50px;max-height:120px;resize:none;" onkeydown="if(event.key===&#39;Enter&#39;&amp;&amp;!event.shiftKey){event.preventDefault();sendToKuiki();}"></textarea>
             <button class="btn btn-gold" onclick="sendToKuiki()" style="height:50px;padding:0 20px;flex-shrink:0;">發送</button>
           </div>
         </div>
@@ -1182,9 +1432,9 @@ tr:hover td { background: rgba(240,180,41,0.02); }
               <div style="font-size:11px;color:var(--gold);margin-bottom:8px;font-weight:600;">🔍 查詢用戶活動</div>
               <div style="font-size:12px;color:var(--text-muted);line-height:1.9;">
                 輸入指令：<br>
-                <span style="color:var(--accent);font-family:'JetBrains Mono',monospace;">/query 用戶ID</span><br><br>
+                <span style="color:var(--accent);font-family:&#39;JetBrains Mono&#39;,monospace;">/query 用戶ID</span><br><br>
                 例如：<br>
-                <span style="color:var(--accent);font-family:'JetBrains Mono',monospace;">/query U123456</span>
+                <span style="color:var(--accent);font-family:&#39;JetBrains Mono&#39;,monospace;">/query U123456</span>
               </div>
             </div>
           </div>
@@ -1198,7 +1448,7 @@ tr:hover td { background: rgba(240,180,41,0.02); }
   <div class="modal">
     <div class="modal-head">
       <div class="modal-title" id="announce-modal-title">新增公告</div>
-      <button class="modal-close" onclick="closeModal('announce-modal')">✕</button>
+      <button class="modal-close" onclick="closeModal(&#39;announce-modal&#39;)">✕</button>
     </div>
     <div class="modal-body">
       <input type="hidden" id="ann-id">
@@ -1214,13 +1464,13 @@ tr:hover td { background: rgba(240,180,41,0.02); }
         <label class="form-label">重要程度</label>
         <select id="ann-importance">
           <option value="high">🔴 重要</option>
-          <option value="normal" selected>🟡 一般</option>
+          <option value="normal" selected="">🟡 一般</option>
           <option value="low">⚪ 低</option>
         </select>
       </div>
       <div style="display:flex;gap:10px;">
         <button class="btn btn-gold" onclick="saveAnnounce()" style="flex:1;">儲存公告</button>
-        <button class="btn btn-ghost" onclick="closeModal('announce-modal')">取消</button>
+        <button class="btn btn-ghost" onclick="closeModal(&#39;announce-modal&#39;)">取消</button>
       </div>
     </div>
   </div>
@@ -1231,7 +1481,7 @@ tr:hover td { background: rgba(240,180,41,0.02); }
   <div class="modal modal-lg">
     <div class="modal-head">
       <div class="modal-title" id="promo-detail-title"></div>
-      <button class="modal-close" onclick="closeModal('promo-detail-modal')">✕</button>
+      <button class="modal-close" onclick="closeModal(&#39;promo-detail-modal&#39;)">✕</button>
     </div>
     <div id="promo-detail-body"></div>
   </div>
@@ -1243,7 +1493,7 @@ tr:hover td { background: rgba(240,180,41,0.02); }
   <div class="modal modal-lg">
     <div class="modal-head">
       <div class="modal-title" id="cd-title">投訴詳情</div>
-      <button class="modal-close" onclick="closeModal('complaint-detail-modal')">✕</button>
+      <button class="modal-close" onclick="closeModal(&#39;complaint-detail-modal&#39;)">✕</button>
     </div>
     <div class="modal-body" id="cd-body"></div>
   </div>
@@ -1254,7 +1504,7 @@ tr:hover td { background: rgba(240,180,41,0.02); }
   <div class="modal">
     <div class="modal-head">
       <div class="modal-title">新增投訴案件</div>
-      <button class="modal-close" onclick="closeModal('new-complaint-modal')">✕</button>
+      <button class="modal-close" onclick="closeModal(&#39;new-complaint-modal&#39;)">✕</button>
     </div>
     <div class="modal-body">
       <div class="form-group">
@@ -1280,9 +1530,34 @@ tr:hover td { background: rgba(240,180,41,0.02); }
         <label class="form-label">涉及金額</label>
         <input type="text" id="nc-amount" placeholder="0">
       </div>
+      <div class="form-group">
+        <label class="form-label">備註</label>
+        <textarea id="nc-note" placeholder="選填..."></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">填表人 *</label>
+        <select id="nc-filler">
+          <option value="">請選擇</option>
+          <option value="Minnie">Minnie</option>
+          <option value="哈茲">哈茲</option>
+          <option value="路克">路克</option>
+          <option value="茗荷">茗荷</option>
+          <option value="嚕奇">嚕奇</option>
+          <option value="尚恩">尚恩</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">是否附上圖片/視頻</label>
+        <select id="nc-hasfile">
+          <option value="無">無</option>
+          <option value="有圖片">有圖片</option>
+          <option value="有視頻">有視頻</option>
+          <option value="有圖片及視頻">有圖片及視頻</option>
+        </select>
+      </div>
       <div style="display:flex;gap:10px;">
         <button class="btn btn-gold" onclick="submitComplaint()" style="flex:1;">提交</button>
-        <button class="btn btn-ghost" onclick="closeModal('new-complaint-modal')">取消</button>
+        <button class="btn btn-ghost" onclick="closeModal(&#39;new-complaint-modal&#39;)">取消</button>
       </div>
     </div>
   </div>
@@ -1293,7 +1568,7 @@ tr:hover td { background: rgba(240,180,41,0.02); }
   <div class="modal">
     <div class="modal-head">
       <div class="modal-title" id="kb-modal-title">新增知識</div>
-      <button class="modal-close" onclick="closeModal('kb-modal')">✕</button>
+      <button class="modal-close" onclick="closeModal(&#39;kb-modal&#39;)">✕</button>
     </div>
     <div class="modal-body">
       <input type="hidden" id="kb-id">
@@ -1303,11 +1578,16 @@ tr:hover td { background: rgba(240,180,41,0.02); }
       </div>
       <div class="form-group">
         <label class="form-label">內容 *</label>
-        <textarea id="kb-content" style="min-height:140px;" placeholder="填寫流程、話術、規則等...&#10;&#10;例：&#10;1. 先安撫用戶情緒&#10;2. 詢問投訴主播ID&#10;3. 記錄投訴內容..."></textarea>
+        <textarea id="kb-content" style="min-height:140px;" placeholder="填寫流程、話術、規則等...
+
+例：
+1. 先安撫用戶情緒
+2. 詢問投訴主播ID
+3. 記錄投訴內容..."></textarea>
       </div>
       <div style="display:flex;gap:10px;">
         <button class="btn btn-gold" onclick="saveKb()" style="flex:1;">儲存</button>
-        <button class="btn btn-ghost" onclick="closeModal('kb-modal')">取消</button>
+        <button class="btn btn-ghost" onclick="closeModal(&#39;kb-modal&#39;)">取消</button>
       </div>
     </div>
   </div>
@@ -1318,7 +1598,7 @@ tr:hover td { background: rgba(240,180,41,0.02); }
 <script>
 // ── CONSTANTS ─────────────────────────────────────────────────
 const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwhUkfbymSEw7lRss8ud6nA85wwFpfeQoY_yBzT7Tj9W20Aad9hxlEjQCtFaBNtDggo/exec';
-const GS_URL = 'https://script.google.com/macros/s/AKfycbxrNeY3hyyAyzdnZbfQKDMBt2oT--vOmXcK40yQsiNx4c8XlNQ4wDQnnGef8UQH7Z1tXA/exec';
+const GS_URL = 'https://script.google.com/macros/s/AKfycbxMF8oRxxK5CB-gwo8o8Rze5WliYmlkFkiqtXBxmIg6zPDCDTMxUWTZSZR2M0QOPFoBNA/exec';
 
 // ── NAVIGATION ────────────────────────────────────────────────
 const pageTitles = { dashboard:'首頁總覽', user:'用戶活動查詢', promo:'平台活動管理', complaint:'投訴管理', kuiki:'🌻 小葵助手', tgbot:'🤖 TG 機器人' };
@@ -1511,10 +1791,12 @@ function viewPromo(id) {
       <div class="form-label" style="margin-bottom:8px;">詳細規則</div>
       <div class="rules-box" style="white-space:pre-wrap;">${escHtml(p.rules)}</div>
       <div style="display:flex;gap:8px;margin-top:16px;">
+        <!-- <button class="btn btn-gold" style="font-size:12px;padding:8px 16px;" id="promo-edit-btn">✏️ 編輯</button> -->
         <button class="btn btn-ghost" style="font-size:12px;padding:8px 16px;" onclick="closeModal('promo-detail-modal')">關閉</button>
       </div>
     </div>`;
   document.getElementById('promo-detail-modal').classList.add('open');
+  const pid = p.id; document.getelementbyid('promo-edit-btn').onclick = function(){ openpromomodal(pid); closemodal('promo-detail-modal'); }; 
 }
 
 function openPromoModal(id) {
@@ -1621,7 +1903,8 @@ function renderComplaints() {
   const query = (document.getElementById('complaint-search')?.value || '').toLowerCase().trim();
   let list = complaints.filter(c => {
     if (complaintFilter !== 'all' && c.status !== complaintFilter) return false;
-    if (query && !c.userId.toLowerCase().includes(query)) return false;
+    <!-- if (query && !c.userId.toLowerCase().includes(query)) return false; -->
+	if (query && !String(c.userId).includes(query)) return false;
     return true;
   });
   const statusDisplay = { pending:['pill-pending','待處理'], processing:['pill-processing','處理中'], closed:['pill-closed','已結案'], rejected:['pill-rejected','已駁回'] };
@@ -1647,45 +1930,51 @@ function renderComplaints() {
 function viewComplaint(id) {
   const c = complaints.find(x => x.id === id);
   if (!c) return;
-  const statusDisplay = { pending:'待處理', processing:'處理中', closed:'已結案', rejected:'已駁回' };
-  document.getElementById('cd-title').textContent = `投訴案件 ${c.id}`;
-  document.getElementById('cd-body').innerHTML = `
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px;">
-      <div class="form-group">
-        <label class="form-label">用戶ID</label>
-        <input type="text" id="cd-userid" value="${escHtml(c.userId)}">
-      </div>
-      <div class="form-group">
-        <label class="form-label">投訴類型</label>
-        <select id="cd-type">
-          ${['主播騙錢','虛假宣傳','客服態度','技術問題','帳號異常','其他'].map(t=>`<option ${c.type===t?'selected':''}>${t}</option>`).join('')}
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">被投訴主播ID</label>
-        <input type="text" id="cd-anchor" value="${escHtml(c.anchor||'')}">
-      </div>
-      <div class="form-group">
-        <label class="form-label">涉及金額</label>
-        <input type="text" id="cd-amount" value="${escHtml(c.amount||'')}">
-      </div>
-      <div class="form-group" style="grid-column:1/-1;">
-        <label class="form-label">投訴內容</label>
-        <textarea id="cd-content" style="min-height:100px;">${escHtml(c.content)}</textarea>
-      </div>
-      <div class="form-group" style="grid-column:1/-1;">
-        <label class="form-label">狀態</label>
-        <select id="cd-status-select">
-          ${['pending','processing','closed','rejected'].map(s=>`<option value="${s}" ${c.status===s?'selected':''}>${statusDisplay[s]}</option>`).join('')}
-        </select>
-      </div>
-    </div>
-    <div style="display:flex;gap:8px;margin-top:8px;">
-      <button class="btn btn-gold" style="flex:1;" onclick="updateComplaint('${c.id}')">儲存修改</button>
-      <button class="btn btn-danger" onclick="deleteComplaint('${c.id}')">刪除</button>
-      <button class="btn btn-ghost" onclick="closeModal('complaint-detail-modal')">取消</button>
-    </div>`;
-  document.getElementById('complaint-detail-modal').classList.add('open');
+  const sd = { pending:'待處理', processing:'處理中', closed:'已結案', rejected:'已駁回' };
+  document.getElementById('cd-title').textContent = '投訴案件 ' + c.id;
+  const html = []
+  html.push('<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">')
+  html.push('<div><div class="form-label">用戶ID</div><div style="padding:8px 0;border-bottom:1px solid var(--border)">' + escHtml(c.userId||'-') + '</div></div>')
+  html.push('<div><div class="form-label">投訴類型</div><div style="padding:8px 0;border-bottom:1px solid var(--border)">' + escHtml(c.type||'-') + '</div></div>')
+  html.push('<div><div class="form-label">被投訴主播ID</div><div style="padding:8px 0;border-bottom:1px solid var(--border)">' + escHtml(c.anchor||'-') + '</div></div>')
+  html.push('<div><div class="form-label">涉及金額</div><div style="padding:8px 0;border-bottom:1px solid var(--border)">' + escHtml(c.amount||'-') + '</div></div>')
+  html.push('<div><div class="form-label">填表人</div><div style="padding:8px 0;border-bottom:1px solid var(--border)">' + escHtml(c.filler||'-') + '</div></div>')
+  html.push('<div><div class="form-label">附件</div><div style="padding:8px 0;border-bottom:1px solid var(--border)">' + escHtml(c.hasfile||'-') + '</div></div>')
+  html.push('<div><div class="form-label">狀態</div><div style="padding:8px 0;border-bottom:1px solid var(--border)">' + (sd[c.status]||c.status) + '</div></div>')
+  html.push('<div><div class="form-label">時間</div><div style="padding:8px 0;border-bottom:1px solid var(--border)">' + escHtml(c.time||'-') + '</div></div>')
+  html.push('<div style="grid-column:1/-1;"><div class="form-label">投訴內容</div><div style="padding:8px 0;border-bottom:1px solid var(--border);white-space:pre-wrap;">' + escHtml(c.content||'-') + '</div></div>')
+  html.push('<div style="grid-column:1/-1;"><div class="form-label">備註</div><div style="padding:8px 0;white-space:pre-wrap;">' + escHtml(c.note||'-') + '</div></div>')
+  html.push('</div>')
+  html.push('<div style="display:flex;gap:8px;margin-top:8px;">')
+  html.push('<button class="btn btn-gold" style="flex:1;" onclick="editComplaint(\''+c.id+'\')">✏️ 編輯</button>')
+  html.push('<button class="btn btn-danger" onclick="deleteComplaint(\''+c.id+'\')">刪除</button>')
+  html.push('<button class="btn btn-ghost" onclick="closeModal(\'complaint-detail-modal\')">關閉</button>')
+  html.push('</div>')
+  document.getElementById('cd-body').innerHTML = html.join('')
+  document.getElementById('complaint-detail-modal').classList.add('open')
+}
+function editComplaint(id) {
+  const c = complaints.find(x => x.id === id);
+  if (!c) return;
+  const sd = { pending:'待處理', processing:'處理中', closed:'已結案', rejected:'已駁回' };
+  const types = ['主播騙錢','虛假宣傳','客服態度','技術問題','帳號異常','其他'];
+  const statuses = ['pending','processing','closed','rejected'];
+  const html = []
+  html.push('<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px;">')
+  html.push('<div class="form-group"><label class="form-label">用戶ID</label><input type="text" id="cd-userid" value="' + escHtml(c.userId) + '"></div>')
+  html.push('<div class="form-group"><label class="form-label">投訴類型</label><select id="cd-type">' + types.map(function(t){ return '<option ' + (c.type===t?'selected':'') + '>' + t + '</option>' }).join('') + '</select></div>')
+  html.push('<div class="form-group"><label class="form-label">被投訴主播ID</label><input type="text" id="cd-anchor" value="' + escHtml(c.anchor||'') + '"></div>')
+  html.push('<div class="form-group"><label class="form-label">涉及金額</label><input type="text" id="cd-amount" value="' + escHtml(c.amount||'') + '"></div>')
+  html.push('<div class="form-group" style="grid-column:1/-1;"><label class="form-label">投訴內容</label><textarea id="cd-content" style="min-height:100px;">' + escHtml(c.content) + '</textarea></div>')
+  html.push('<div class="form-group" style="grid-column:1/-1;"><label class="form-label">狀態</label><select id="cd-status-select">' + statuses.map(function(s){ return '<option value="' + s + '" ' + (c.status===s?'selected':'') + '>' + sd[s] + '</option>' }).join('') + '</select></div>')
+  html.push('<div class="form-group" style="grid-column:1/-1;"><label class="form-label">備註</label><textarea id="cd-note">' + escHtml(c.note||'') + '</textarea></div>')
+  html.push('</div>')
+  html.push('<div style="display:flex;gap:8px;margin-top:8px;">')
+  html.push('<button class="btn btn-gold" style="flex:1;" onclick="updateComplaint(\''+c.id+'\')">儲存修改</button>')
+  html.push('<button class="btn btn-danger" onclick="deleteComplaint(\''+c.id+'\')">刪除</button>')
+  html.push('<button class="btn btn-ghost" onclick="viewComplaint(\''+c.id+'\')">取消</button>')
+  html.push('</div>')
+  document.getElementById('cd-body').innerHTML = html.join('')
 }
 
 async function updateComplaint(id) {
@@ -1699,9 +1988,10 @@ async function updateComplaint(id) {
     amount: document.getElementById('cd-amount').value.trim(),
     content: document.getElementById('cd-content').value.trim(),
     status: document.getElementById('cd-status-select').value,
+    note: document.getElementById('cd-note') ? document.getElementById('cd-note').value.trim() : (c.note||''),
   };
   try {
-    await fetch(GS_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ action:'updateComplaint', ...updated }) });
+    await fetch(GS_URL + '?' + new URLSearchParams({action:'updateComplaint', ...updated}).toString());
     closeModal('complaint-detail-modal');
     notify('投訴已更新 ✅', 'success');
     await loadComplaints();
@@ -1713,7 +2003,7 @@ async function updateComplaint(id) {
 async function deleteComplaint(id) {
   if (!confirm('確定要刪除此投訴案件？')) return;
   try {
-    await fetch(GS_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ action:'deleteComplaint', id }) });
+    await fetch(GS_URL + '?action=deleteComplaint&id=' + encodeURIComponent(id));
     closeModal('complaint-detail-modal');
     notify('投訴已刪除', 'success');
     await loadComplaints();
@@ -1727,14 +2017,16 @@ async function submitComplaint() {
   const content = document.getElementById('nc-content').value.trim();
   if (!userId || !content) { notify('請填寫用戶ID和投訴內容', 'error'); return; }
   const newId = 'C' + Date.now().toString().slice(-8);
-  const entry = { id: newId, userId, type: document.getElementById('nc-type').value, anchor: document.getElementById('nc-anchor').value.trim(), content, amount: document.getElementById('nc-amount').value.trim(), status: 'pending', time: now() };
+  const entry = { id: newId, userId, type: document.getElementById('nc-type').value, anchor: document.getElementById('nc-anchor').value.trim(), content, amount: document.getElementById('nc-amount').value.trim(), status: 'pending', time: now(), filler: document.getElementById('nc-filler').value, hasfile: document.getElementById('nc-hasfile').value, note: document.getElementById('nc-note').value.trim() };
   try {
-    await fetch(GS_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ action:'addComplaint', ...entry }) });
+    await fetch(GS_URL + '?' + new URLSearchParams({action:'addComplaint', ...entry}).toString());
     closeModal('new-complaint-modal');
     notify(`投訴案件 ${newId} 已建立`, 'success');
     await loadComplaints();
     addRecentItem('complaint', `新增投訴：${userId} · ${entry.type}`);
-    ['nc-userid','nc-anchor','nc-content','nc-amount'].forEach(id => document.getElementById(id).value = '');
+    ['nc-userid','nc-anchor','nc-content','nc-amount','nc-note'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('nc-filler').value = '';
+    document.getElementById('nc-hasfile').value = '無';
   } catch(e) {
     notify('新增失敗，請重試', 'error');
   }
@@ -1773,7 +2065,7 @@ async function saveAnnounce() {
   const data = { id: id || 'A' + Date.now().toString().slice(-6), title, content, importance: document.getElementById('ann-importance').value, time: now() };
   try {
     const action = id ? 'updateAnnounce' : 'addAnnounce';
-    await fetch(GS_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ action, ...data }) });
+    await fetch(GS_URL + '?' + new URLSearchParams({action, ...data}).toString());
     closeModal('announce-modal');
     notify('公告已儲存', 'success');
     await loadAnnounces();
@@ -1786,7 +2078,7 @@ async function saveAnnounce() {
 async function deleteAnnounce(id) {
   if (!confirm('確定要刪除此公告？')) return;
   try {
-    await fetch(GS_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ action:'deleteAnnounce', id }) });
+    await fetch(GS_URL + '?action=deleteAnnounce&id=' + encodeURIComponent(id));
     notify('公告已刪除', 'success');
     await loadAnnounces();
   } catch(e) {
@@ -1839,8 +2131,13 @@ function renderRecent() {
 
 function updateDashStats() {
   const today = new Date().toLocaleDateString('zh-TW');
+  const todayStr = new Date().toLocaleDateString('zh-TW'); // "2026/04/03"
   const pending = complaints.filter(c => c.status === 'pending').length;
-  const todayNew = complaints.filter(c => c.time && c.time.startsWith(today.replace(/\//g,'/').slice(0,10))).length;
+  const todayNew = complaints.filter(c => {
+  if (!c.time) return false;
+  const d = new Date(c.time);
+  return d.toLocaleDateString('zh-TW') === todayStr;
+}).length;
   const closed = complaints.filter(c => c.status === 'closed').length;
   const activePromos = promos.filter(p => p.status === 'on').length;
 
@@ -2005,7 +2302,7 @@ async function sendToKuiki() {
   const input = document.getElementById('kuiki-input');
   const text = input.value.trim();
   if (!text) return;
-  const key = localStorage.getItem('kuiki_api_key');
+  const key = 'AIzaSyBUXw7WRfXdptoLtRJL9VoQHnfidjcbkXE';
   if (!key) {
     notify('小葵尚未設定，請聯繫管理員', 'error');
     return;
@@ -2106,7 +2403,7 @@ function notify(msg, type='info') {
   document.getElementById('notification-container').appendChild(el);
   setTimeout(() => el.remove(), 3500);
 }
-function now() { return new Date().toLocaleString('zh-TW', { year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit' }); }
+function now() { const d = new Date(Date.now() + 8*60*60*1000); return d.getUTCFullYear() + '-' + String(d.getUTCMonth()+1).padStart(2,'0') + '-' + String(d.getUTCDate()).padStart(2,'0') + ' ' + String(d.getUTCHours()).padStart(2,'0') + ':' + String(d.getUTCMinutes()).padStart(2,'0'); }
 function escHtml(str) { return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 document.querySelectorAll('.modal-overlay').forEach(o => o.addEventListener('click', e => { if (e.target === o) o.classList.remove('open'); }));
 
@@ -2120,5 +2417,32 @@ async function initApp() {
 
 initApp();
 </script>
-</body>
-</html>
+<!-- Promo Edit Modal -->
+<div class="modal-overlay" id="promo-edit-modal">
+  <div class="modal modal-lg">
+    <div class="modal-head">
+      <div class="modal-title" id="promo-edit-title">新增活動</div>
+      <button class="modal-close" onclick="closeModal(&#39;promo-edit-modal&#39;)">✕</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="pe-id">
+      <div class="form-group"><label class="form-label">活動名稱 *</label><input type="text" id="pe-name" placeholder="活動名稱"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="form-group"><label class="form-label">類別</label><select id="pe-category"><option value="live">直播</option><option value="chess">棋牌</option></select></div>
+        <div class="form-group"><label class="form-label">發放周期</label><select id="pe-cycle"><option>每週</option><option>每月</option><option>一次性</option><option>不限</option></select></div>
+        <div class="form-group"><label class="form-label">申請條件</label><input type="text" id="pe-condition" placeholder="條件說明"></div>
+        <div class="form-group"><label class="form-label">發放方式</label><input type="text" id="pe-method" placeholder="發放方式"></div>
+        <div class="form-group"><label class="form-label">狀態</label><select id="pe-status"><option value="on">上架中</option><option value="off">已下架</option></select></div>
+      </div>
+      <div class="form-group"><label class="form-label">詳細規則</label><textarea id="pe-rules" style="min-height:100px;" placeholder="活動規則..."></textarea></div>
+      <div class="form-group"><label class="form-label">圖片網址</label><input type="text" id="pe-img" placeholder="https://..."></div>
+      <div style="display:flex;gap:8px;margin-top:8px;">
+        <button class="btn btn-gold" style="flex:1;" onclick="savePromo()">儲存</button>
+        <button class="btn btn-ghost" onclick="closeModal(&#39;promo-edit-modal&#39;)">取消</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body></html>
